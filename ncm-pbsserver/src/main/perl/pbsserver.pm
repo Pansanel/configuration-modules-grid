@@ -179,7 +179,7 @@ sub Configure
 
     if ( $tree->{server}->{attlist}->{server_name} ) {
         my $fh = CAF::FileWriter->new("$pbsroot/server_name", log => $self);
-        print $fh "$tree->{server}->{attlist}->{server_name}\n";
+        print $fh "$tree->{server}->{attlist}->{server_name}";
         if ($fh->close()) {
             $self->info("server_name file changed, restarting pbs_server");
             if (! $srv->restart()) {
